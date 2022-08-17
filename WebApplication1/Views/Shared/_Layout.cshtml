@@ -1,0 +1,80 @@
+﻿
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="ajol">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="Barat Hadian">
+    <link rel="stylesheet" href="~/WebSite/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/WebSite/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/WebSite/assets/css/line-awesome.min.css">
+    <link rel="stylesheet" href="~/WebSite/assets/css/meanmenu.min.css">
+    <!--home-->
+    <link rel="stylesheet" href="~/WebSite/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/WebSite/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/WebSite/assets/css/odometer.min.css">
+    <link href="~/WebSite/assets/FontAwsome/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/WebSite/assets/css/style.css">
+    <link rel="stylesheet" href="~/WebSite/assets/css/responsive.css">
+    <link rel="stylesheet" href="~/WebSite/assets/css/rtl.css">
+    <link rel="stylesheet" href="~/WebSite/assets/css/override.css">
+    <title>@ViewData["CompanyName"]</title>
+
+    <link rel="icon" type="image/png" href="@ViewData["Path"]">
+</head>
+<body>
+
+    <div class="preloader" style="display: none;">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+    </div>
+
+
+  
+    @RenderBody()
+
+
+
+
+
+
+    <div class="go-top">
+        <i class="las la-hand-point-up"></i>
+    </div>
+
+    <script src="~/WebSite/assets/js/jquery.min.js"></script>
+    <script src="~/WebSite/assets/js/popper.min.js"></script>
+    <script src="~/WebSite/assets/js/bootstrap.min.js"></script>
+    <script src="~/WebSite/assets/js/meanmenu.min.js"></script>
+    <script src="~/WebSite/assets/js/jquery.magnific-popup.min.js"></script>
+    <!--home-->
+    <script src="~/WebSite/assets/js/owl.carousel.min.js"></script>
+    <script src="~/WebSite/assets/js/odometer.min.js"></script>
+    <script src="~/WebSite/assets/FontAwsome/all.min.js"></script>
+    <script src="~/WebSite/assets/js/jquery.appear.js"></script>
+    <script src="~/WebSite/assets/js/custom.js"></script>
+    <script src="~/WebSite/assets/js/CustomJs.js"></script>
+
+
+    <script>
+        var d = 0;
+        $(window).scroll(function (e) {
+            let scroll = this.scrollY;
+            d = this.scrollY + 1000;
+        })
+        $("li.nav-item a").click(function () {
+            //let dd = this.scrollY + 1000;
+            console.log(d)
+            //document.documentElement.scrollTop = 400;
+            window.scrollTo(0, 900)
+        })
+ 
+    </script>
+</body>
+</html>

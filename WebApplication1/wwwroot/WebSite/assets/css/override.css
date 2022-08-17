@@ -1,0 +1,76 @@
+﻿.sign-in {
+    color: #fff;
+    font-size: 12px;
+    display: inline-block;
+}
+
+    .sign-in a {
+        color: #fff;
+        padding: 0 5px;
+    }
+
+        .sign-in a:hover {
+            color: #fd9518
+        }
+
+.page-banner-area {
+    height: 139px;
+}
+
+
+.app-links li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+    .app-links li a {
+        list-style: none;
+        background-color: #000;
+        border-radius: 8px;
+        padding: 30px 0;
+    }
+
+.colored-bg {
+    position: relative;
+    color: #fff;
+}
+
+    .colored-bg h2, .colored-bg h3, .colored-bg p {
+        color: #fff;
+    }
+
+    .colored-bg::before {
+        content: '';
+        position: absolute;
+        background-color: #03291b;
+        width: 100%;
+        height: 100%;
+        opacity: .8;
+        top: 0;
+        left: 0;
+    }
+
+.faq-cat {
+    text-align: right;
+    margin: 25px 0 10px 0;
+}
+
+    .faq-cat span {
+        font-size: 17px;
+    }
+
+.blog-card .rating {
+    margin: 10px 10px 0 0;
+    height: 24px;
+}
+
+    .blog-card .rating i {
+        color: #fd9518;
+    }
+
+.club .blog-text {
+    padding-top: 20px;
+}
+.form-control:focus {
+    border-color: #fdb359;
+}

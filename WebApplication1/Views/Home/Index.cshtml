@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model WebApplication1.ViewModels.InfoVM
+<div class="contact-form">
+    <form id="FormInfo" method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div id="contactForm">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input autocomplete="off" type="text" class="form-control" asp-for="NameFamily" onkeyup="valideInput(this.value,'NameFamily')" oninvalid="this.setCustomValidity('نام خود را وارد کنید')"
+                               oninput="this.setCustomValidity('')"
+                               id="NameFamily" placeholder="نام و نام خانوادگی" required="" />
+                        <span class="help-block" id="NameFamilyValid" style="display:none">
+                            <span class="text-danger field-validation-error">نام و نام خانوادگی الزامی است</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input autocomplete="off" type="text" class="form-control" asp-for="Mobile" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="11"
+                               id="Mobile" placeholder="تلفن شما" />
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <span>تصویر</span><br />
+                    <input type="file" name="img" id="img" onchange="previewFile('Preview', 'img')" />
+                </div>
+                <div class="col-lg-6">
+                    <img id="Preview" style="width: 200px;height: 200px;border-radius: 32px;" />
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <textarea class="form-control" id="Message" asp-for="Message" onkeyup="valideInput(this.value,'Message')" required="" rows="3" placeholder="متن"></textarea>
+                <span class="help-block" id="MessageValid" style="display:none">
+                    <span class="text-danger field-validation-error">پیام الزامی است</span>
+                </span>
+            </div>
+            <span id="lblName" style="color:red"></span>
+            <div class="form-btn">
+                <button type="button" onclick="AjaxFormSubmit('save')" class="default-btn">ذخیره <span style="top: 32px; left: 563.5px;"></span></button>
+                <br />
+                <br />
+                <button type="button" onclick="AjaxFormSubmit('saveSp')" class="default-btn">ذخیره به صورت استور پروسیجر <span style="top: 32px; left: 563.5px;"></span></button>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    function AjaxFormSubmit(actionName) {
+        var nameFamily = document.getElementById("NameFamily").value.length;
+        var mobileLength = document.getElementById("Mobile").value.length;
+        var mobileValue = $("#Mobile").val();
+
+
+        if (nameFamily == '') {
+            return $("#lblName").html("نام و نام خانوادگی الزامی است");
+        }
+
+
+        if (mobileValue != '') {
+            if (mobileLength != 11) {
+                return $("#lblName").html("شماره موبایل باید 11 رقم باشد");
+            } else if (mobileLength == 11) {
+                var mobileStartWith = mobileValue.substring(0, 2);
+                if (mobileStartWith != '09') {
+                    return $("#lblName").html("شماره موبایل باید با 09 شروع شود");
+                }
+            }
+        }
+
+
+
+        //Set the URL.
+        var url = "/home/" + actionName;
+
+        //Add the Field values to FormData object.
+        var formData = new FormData();
+        formData.append("NameFamily", $("#NameFamily").val());
+
+        formData.append("Mobile", $("#Mobile").val());
+
+        formData.append("Message", $("#Message").val());
+
+
+
+        $.each($("#FormInfo input:file"), function(key, fileInput) {
+            formData.append("img", fileInput.files[0]);
+        })
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: formData,
+            processData: false,
+            contentType: false
+        }).done(function(response) {
+            if (response) {
+                $("#NameFamily").val('');
+                $("#Mobile").val('');
+                $("#Message").val('');
+                $("#lblName").html("");
+                alert("با موفقیت ثبت شد")
+
+            } else {
+
+                $("#lblName").html("Error");
+            }
+        });
+    }
+    function valideInput(value, type) {
+        if (value.length == 0) {
+            $(`#${type}Valid`).show();
+        } else {
+            $(`#${type}Valid`).hide();
+        }
+    }
+    function previewFile(id1, id2) {
+        var preview = document.getElementById(id1);
+        var file = document.querySelector('input[id=' + id2 + ']').files[0];
+        var reader = new FileReader();
+
+        reader.addEventListener("load", function() {
+            preview.src = reader.result;
+        }, false);
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
