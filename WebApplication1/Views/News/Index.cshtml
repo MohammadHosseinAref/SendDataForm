@@ -1,0 +1,38 @@
+﻿@{
+    int count = 0;
+}
+@using WebApplication1.Extensions
+
+@model List<WebApplication1.Data.NewsFiles.NewsFile>
+<div class="tab-pane fade active show" id="confirm" role="tabpanel" aria-labelledby="confirm-tab">
+    <div class="row p-4">
+        <div class="col-md-8 text-end">
+            <table class="table table-sm table-hover table-striped text-start">
+                <thead>
+                    <tr>
+                        <th>ردیف</th>
+                        <th>نوع</th>
+                        <th>عنوان</th>
+                        <th>توضیحات</th>
+                        <th> تاریخ بروز رسانی</th>
+                        <th>دانلود<i class="fa fa-download"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@(++count)</td>
+                            <td>@item.FileType</td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@item.UpdateDate.GeorgianToPersian()</td>
+                            <td><a href="@item.Link" download style="color:blue;cursor:pointer">دانلود <i class="fa fa-download"></i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

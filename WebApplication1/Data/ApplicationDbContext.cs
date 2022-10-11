@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WebApplication1.Data.NewsFiles;
 using WebApplication1.Fluents;
 
 namespace WebApplication1.Data
@@ -10,6 +11,7 @@ namespace WebApplication1.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Info> Info { get; set; }
+        public DbSet<NewsFile>newsFile{ get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
