@@ -1,0 +1,113 @@
+﻿.experimental {
+    width: 100%;
+    padding: 0.25rem;
+    border-bottom: 1px solid #001845;
+    box-shadow: 0px 1px 36px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.experimental span {
+    color: #ed2939;
+    font-size: 0.9rem;
+    animation: experimentalEX 50s linear infinite;
+    display: block;
+}
+
+.experimental.statisctics-ex span {
+    color: #ed2939;
+    font-size: 0.9rem;
+    animation: statiscticsEX 50s linear infinite;
+    display: block;
+}
+
+@keyframes statiscticsEX {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(40%);
+    }
+}
+
+@keyframes experimentalEX {
+    from {
+        transform: translateX(15%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+/*        #loader {
+                                        border: 12px solid #f3f3f3;
+                                        border-radius: 50%;
+                                        border-top: 12px solid #444444;
+                                        width: 70px;
+                                        height: 70px;
+                                        animation: spin 1s linear infinite;
+                                        }
+
+                                        @keyframes spin {
+                                        100% {
+                                        transform: rotate(360deg);
+                                        }
+                                        }*/
+
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+@-webkit-keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+    

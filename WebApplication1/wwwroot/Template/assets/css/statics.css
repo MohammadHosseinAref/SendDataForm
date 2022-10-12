@@ -1,0 +1,91 @@
+
+
+
+
+@font-face {
+  font-family: Iransans;
+  src: url("../fonts/Iransans.ttf");
+  src: url("../fonts/Iransansd41d.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Iransans.woff2") format("woff2"),
+    url("../fonts/Iransans.woff") format("woff"),
+    url("../fonts/Iransans.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+    font-family: BTitr;
+    src: url("../fonts/b_tir.ttf");
+    src: url("../fonts/b_tir.eot") format("embedded-opentype"), 
+        url("../fonts/b_tir.woff2") format("woff2"), 
+        url("../fonts/b_tir.woff") format("woff"), 
+        url("../fonts/b_tir.ttf") format("truetype");
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: "IranNastaliq";
+    src: url("../fonts/IranNastaliq.eot");
+    src: url("../fonts/IranNastaliqd41d.eot?#iefix") format("embedded-opentype"), 
+        url("../fonts/IranNastaliq.woff2") format("woff2"), 
+        url("../fonts/IranNastaliq.woff") format("woff"), 
+        url("../fonts/IranNastaliq.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  font-family: Iransans;
+}
+
+html,
+body {
+  background-color: #fafafa;
+}
+/*
+.orange-header {
+    background-image: url(/Template/assets/images/bg-head.png);
+    background-color: #ff5400;
+    background-size: cover, cover;
+    background-position: center;
+}
+*/
+.orange-header {
+    background-image: url(../images/bg-head.png);
+    background-color: #001845;
+    background-size: cover, cover;
+    background-position: center;
+}
+.bg-fili {
+    background-image: url(../images/fil-bk.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+@font-face {
+    font-family: BTitr;
+    src: url("../fonts/b_tir.ttf");
+    src: url("../fonts/b_tir.eot") format("embedded-opentype"), url("../fonts/b_tir.woff2") format("woff2"), url("../fonts/b_tir.woff") format("woff"), url("../fonts/b_tir.ttf") format("truetype");
+    font-weight: normal;
+}
+/*
+.bg-dark {
+    background-color: #071013 !important;
+}*/
+
+.bg-dark {
+    background-color: #001233 !important;
+}
+
+.w-45{
+    width : 48%;
+}
+
+.color-idea {
+    color: rgb(46, 139, 87);
+}
+
+.color-need {
+    color: rgb(21, 194, 244);
+}
